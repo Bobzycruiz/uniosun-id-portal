@@ -1,0 +1,154 @@
+:root {
+  --brand-green: #0B4D2C;
+  --brand-green-deep: #073820;
+  --brand-gold: #C9A227;
+  --bg: #F4F6F5;
+}
+
+body {
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.brand-bar {
+  background: var(--brand-green);
+  border-bottom: 3px solid var(--brand-gold);
+}
+
+.brand-crest {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-gold);
+  color: var(--brand-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.btn-brand {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #fff;
+}
+.btn-brand:hover, .btn-brand:focus {
+  background: var(--brand-green-deep);
+  border-color: var(--brand-green-deep);
+  color: #fff;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  color: #9AA5A0;
+}
+.step .step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E1E6E3;
+  color: #6B756F;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 auto 6px;
+}
+.step .step-label {
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+}
+.step.active .step-num, .step.completed .step-num {
+  background: var(--brand-green);
+  color: #fff;
+}
+.step.active .step-label, .step.completed .step-label {
+  color: var(--brand-green);
+}
+
+/* Upload previews */
+.upload-thumb {
+  width: 90px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #DDE2DF;
+}
+
+/* Preview table (step 4) */
+.preview-table {
+  border: 1px solid #E1E6E3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.preview-row {
+  display: flex;
+  padding: 10px 16px;
+  border-bottom: 1px solid #EEF1EF;
+  font-size: 14px;
+}
+.preview-row:last-child { border-bottom: none; }
+.preview-row:nth-child(odd) { background: #FAFBFA; }
+.preview-label {
+  width: 40%;
+  color: #6B756F;
+  font-weight: 600;
+}
+.preview-value { width: 60%; word-break: break-word; }
+.preview-section-title {
+  background: var(--brand-green);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.preview-images {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+}
+.preview-images img {
+  width: 80px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #DDE2DF;
+}
+
+/* Receipt */
+.receipt-box {
+  border: 2px solid var(--brand-green);
+  border-radius: 10px;
+  padding: 28px;
+  background: #fff;
+}
+.receipt-header {
+  text-align: center;
+  border-bottom: 2px dashed #DDE2DF;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+}
+
+/* Admin */
+.status-badge { font-size: 12px; padding: 4px 10px; border-radius: 20px; }
+.status-Pending { background: #FFF3CD; color: #856404; }
+.status-Approved { background: #D4EDDA; color: #155724; }
+.status-Rejected { background: #F8D7DA; color: #721C24; }
